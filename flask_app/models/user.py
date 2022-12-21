@@ -3,7 +3,7 @@ from flask_app.config.mysqlconnection import connectToMySQL
 import re
 from flask import flash
 from flask_bcrypt import Bcrypt
-schema_name = 'recipe_schema'
+schema_name = 'equipment_schema'
 EMAIL_REGEX = re.compile(r'^[a-zA-Z0-9.+_-]+@[a-zA-Z0-9._-]+\.[a-zA-Z]+$')
 USERNAME_REGEX = re.compile(r'[^a-zA-Z]gm')
 class User:
