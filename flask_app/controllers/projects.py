@@ -6,6 +6,7 @@ bcrypt = Bcrypt(app)
 @app.route('/projects')
 def projects():
     projects = Project.get_all_posts()
+    print(projects)
     return render_template('/projects.html', posts = projects)
 @app.route('/add_project')
 def add_project():
@@ -34,7 +35,7 @@ def edit_project(id):
     }
     project_item = Project.get_one_by_id(data)
     return render_template('edit_project.html', item=project_item)
-@app.route('/edit', methods=['POST'])
+@app.route('/editproject', methods=['POST'])
 def handle_edit_project():
     if request.form['projectid'] == '' or request.form['project_manager'] == '':
         flash("All fields are required!")

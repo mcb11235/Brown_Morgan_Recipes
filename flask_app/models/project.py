@@ -18,7 +18,7 @@ class Project:
         query = "INSERT INTO projects (projectid,project_name,client_name,owner_name,project_manager,principal_engineer,total_budget,industry_sector) VALUES (%(projectid)s,%(project_name)s,%(client_name)s,%(owner_name)s,%(project_manager)s,%(principal_engineer)s,%(total_budget)s,%(industry_sector)s);"
         return connectToMySQL(schema_name).query_db(query, data)
     @classmethod
-    def update_equipment(cls, data):
+    def update_project(cls, data):
         query = "UPDATE projects SET project_name=%(project_name)s,client_name=%(client_name)s,owner_name=%(owner_name)s,project_manager=%(project_manager)s,principal_engineer=%(principal_engineer)s,total_budget=%(total_budget)s,industry_sector=%(industry_sector)s WHERE projectid=%(projectid)s;"
         return connectToMySQL(schema_name).query_db(query, data)    
     @classmethod
