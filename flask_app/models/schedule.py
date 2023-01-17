@@ -42,6 +42,6 @@ class Schedule:
         results = connectToMySQL(schema_name).query_db(query, data)
         return cls(results[0])
     @classmethod
-    def delete_recipe(cls, data):
-        query = "DELETE FROM schedules WHERE id=%(id)s"
+    def delete_schedule(cls, data):
+        query = "DELETE FROM schedules WHERE schedule_id=%(schedule_id)s"
         return connectToMySQL(schema_name).query_db(query, data)
