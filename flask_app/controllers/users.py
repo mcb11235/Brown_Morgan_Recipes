@@ -2,7 +2,7 @@ from datetime import date
 from flask_app import app
 from flask import render_template, redirect, request, session, flash
 from flask_app.models.user import User
-from flask_app.models.post import Recipe
+from flask_app.models.post import Equipment
 from flask_bcrypt import Bcrypt
 bcrypt = Bcrypt(app)
 @app.route("/")
@@ -25,7 +25,7 @@ def create_user():
     print("S E S S I O N")
     session['user'] = current_user
     print(session['user'])
-    return redirect('/recipes')
+    return redirect('/dashboard')
 @app.route("/login", methods=['POST'])
 def login():
     data = {
@@ -40,7 +40,7 @@ def login():
         flash("Email Does Not Exist!")
         return redirect('/')
     session['user'] = user.id        
-    return redirect('/recipes')
+    return redirect('/dashboard')
 @app.route("/logout")
 def logout():
     session.clear()
